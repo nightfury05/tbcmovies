@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="bg">
+    <div errorebi>
+        {% if form.errors %}
+            {% for field, errors in form.errors.items() %}
+                {% for error in errors %}
+                    <div class="alert alert-danger">
+                        {{ error}}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-danger">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div class="container my-5 py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card bg-dark" style="color: #146fff;">
+                    <div class="card-header">
+                        <h2 class="text-center">ავტორიზაცია</h2>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            {{ form.hidden_tag() }}
+                            <div class="form-group">
+                                <label >სახელი: </label>
+                                {{ form.username(Class="form-control", required="required") }}
+                            </div>
+                            <div class="form-group">
+                                <label >პაროლი:</label>
+                                {{ form.password(Class="form-control", required="required") }}
+                            </div>
+                            <div class="form-group text-center">
+                                {{form.submit(class="btn btn-primary mt-2")}}
+                            </div>
+                            <p  class="text-center">  <a href="/Login">Already have an account? Login</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

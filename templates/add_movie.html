@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container bgadd my-4">
+<center class="form-label center" style="color: white;">ფილმის დამატება</center>
+    <div errorebi>
+        {% if form.errors %}
+        {% for field, errors in form.errors.items() %}
+        {% for error in errors %}
+        <div class="alert alert-danger">
+            {{ error}}
+        </div>
+        {% endfor %}
+        {% endfor %}
+        {% endif %}
+    </div>
+
+    <form method="post" enctype="multipart/form-data" class="mt-4">
+        {{ form.hidden_tag() }}
+        {{ form.title.label(class="mb-1 ms-1") }}
+        {{ form.title(class="form-control placeholder-color", placeholder=form.title.label.text) }}
+        {{ form.desc.label(class="mt-4 mb-1 ms-1") }}
+        {{ form.desc(class="form-control  placeholder-color", rows="3", placeholder=form.desc.label.text) }}
+        {{ form.imbd.label(class="mt-4 mb-1 ms-1") }}
+        {{ form.imbd(class="form-control mb-4 placeholder-color", min="0.1", max="10", placeholder=form.imbd.label.text) }}
+        <a class="ms-1 my-4" style="color: #ffffff">{{form.imgv.label}}</a>
+        {{ form.imgv(class="form-control mb-4 placeholder-color", accept=".jpg, .png, .jpeg") }}
+        <a class="ms-1" style="color: #ffffff">{{form.imgh.label}}</a>
+        {{ form.imgh(class="form-control placeholder-color", accept=".jpg, .png, .jpeg") }}
+        {{ form.genre.label(class="mt-4 mb-1 ms-1") }}
+        {{ form.genre(class="form-control placeholder-color",) }}
+        {{ form.category_id.label(class="mt-4 mb-1 ms-1") }}
+        {{ form.category_id(class="form-control mb-4 placeholder-color", style="list-style:none") }}
+
+
+        {{ form.submit(class="btn btn-warning my-4") }}
+    </form>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

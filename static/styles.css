@@ -1,0 +1,271 @@
+.carousel-caption h1 {
+    font-size: 5em;
+    color: white;
+}
+#movieSlider .card {
+            width: 10rem; /* Adjust the width of the card */
+            margin: 5px; /* Adjust the margin between cards */`
+        }
+
+        #movieSlider .card-img-top {
+        height: 220px; /* Adjust the height of the card image */
+        }
+
+        #movieSlider .card-title {
+            font-size: 1rem; /* Adjust the font size of the card title */
+        }
+
+        #movieSlider .card-text {
+            font-size: 0.8rem; /* Adjust the font size of the card text */
+        }
+
+        #seriesSlider .card {
+            width: 10rem; /* Adjust the width of the card */
+            margin: 5px; /* Adjust the margin between cards */`
+        }
+
+        #seriesSlider .card-img-top {
+            height: 220px; /* Adjust the height of the card image */
+        }
+
+        #seriesSlider .card-title {
+            font-size: 1rem; /* Adjust the font size of the card title */
+        }
+
+        #seriesSlider .card-text {
+            font-size: 0.8rem; /* Adjust the font size of the card text */
+        }
+.bg {
+            background-color: #2b3035; /* Replace with your desired color code */
+            border-radius: 15px;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3)
+
+
+        }
+
+.bgadd {
+            background-color: #2b3035; /* Replace with your desired color code */
+            border-radius: 15px;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            padding-top: 5px;
+
+        }
+
+.bgn {
+            background-color: #212529   ; /* Replace with your desired color code */
+            }
+
+.bgc {
+            background-color: #212529   ; /* Replace with your desired color code */
+            border-radius: 15px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+
+            }
+.white {
+color: #fffff
+}
+
+.carousel-inner {
+    border-radius: 15px; /* Add border-radius to round the corners of the carousel */
+    margin-bottom: 20px;
+}
+    body {
+background-color: #1b1f22;
+color: #D3D4D9;
+padding-top: 76px;
+height: 100%;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+
+}
+html {
+height: 100%;
+
+}
+
+
+
+.nav {
+            background-color: #212529; /* Replace with your desired color code */
+            border-radius: 15px;
+            margin-bottom: 20px;
+
+        }
+
+
+
+
+        .container {
+            max-width: 1200px;
+        }
+.content {
+    flex: 1; /* Allow content to expand to fill remaining vertical space */
+}
+
+
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .featured-movies {
+            margin-top: 30px;
+        }
+
+        .featured-movies img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .category-section {
+            margin-top: 50px;
+        }
+
+        .category-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .recommended-movies {
+            margin-top: 50px;
+        }
+
+        .recommended-movie {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Custom styles for the input field */
+#inputValue {
+  color: white;
+  background-color: #333;
+  border: none;
+  max-width: 3em;
+}
+
+/* Adjust layout for small screens */
+@media (max-width: 576px) {
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.form-group {
+            margin-top: 10px;
+        }
+
+.placeholder-color::placeholder {
+    color: #D3D4D9; /* Change this to the color you want */
+}
+.placeholder-color {
+background-color: #2b3035;
+color: #D3D4D9;
+}
+
+.nav-link {
+color: #D3D4D9;
+}
+
+/* Remove text decoration for an anchor tag */
+a {
+    text-decoration: none;
+}
+
+/* grey text collor */
+
+.gtext {
+color: #D3D4D9;
+}
+
+.fb {
+  position: relative; /* Position the card relatively */
+  margin-top: auto; /* Push the card to the bottom */
+  margin-bottom: 300px; /* Set the distance from the bottom */
+}
+.carousel-control-prev{
+ margin-right: 0px;
+}
+
+.circle-image-container {
+    width: 32px; /* Adjust the width and height as needed */
+    height: 32px; /* Ensure width and height are the same for a perfect circle */
+    border-radius: 50%; /* Create a circular shape */
+    padding: 0px;
+}
+
+.circle-image-container img {
+    width: 100%; /* Make the image fill the circular container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Ensure the image itself is circular */
+    margin top: 30px;
+}
+
+footer {
+    flex-shrink: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+    width: 100%;
+    background-color:
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 1296px;
+    z-index: 1000; /* Adjust z-index as needed */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3)
+    /* Other styles you want to apply */
+}
+.bgf {
+            background-color: #2b3035; /* Replace with your desired color code */
+            margin top: 100px;
+
+        }
+.bgn {
+    background-color: #2212529; /* Replace with your desired color code */
+    border-bottom-left-radius: 3px; /* Adjust the value to control the roundness */
+    border-bottom-right-radius: 3px; /* Adjust the value to control the roundness */
+
+
+main {
+    padding-top: 60px;
+}
+
+.container-sm {
+    min-height: calc(100% - 100px); /* Adjust this value based on your footer's height */
+    /* Other styles for the container */
+}
+
+.two-rows {
+    max-height: 2px;
+    overflow: hidden;
+    line-height: 1.2em;
+    font-size: 1px;
+}
+
+.two-row-container {
+    height: 2px; /* Height for 3 rows at 12px font size */
+    overflow: hidden;
+}

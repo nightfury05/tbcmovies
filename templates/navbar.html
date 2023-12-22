@@ -1,0 +1,64 @@
+<div class="container-sm ">
+    <nav class="navbar navbar-expand-lg bgn" data-bs-theme="dark">
+        <div class="container-fluid  ">
+            <a class="navbar-brand" href="/">Home</a>
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll " style="--bs-scroll-height: 100px;">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/category/1">Films</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="/category/2">Series</a>
+                    </li>
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="/Add_Movie">Add Movie</a>
+                    </li>
+                    {% endif %}
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Genres
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/genre/Action">Action</a></li>
+                            <li><a class="dropdown-item" href="/genre/Adventure">Adventure</a></li>
+                            <li><a class="dropdown-item" href="/genre/Animated">Animated</a></li>
+                            <li><a class="dropdown-item" href="/genre/Comedy">Comedy</a></li>
+                            <li><a class="dropdown-item" href="/genre/Drama">Drama</a></li>
+                            <li><a class="dropdown-item" href="/genre/Historical">Historical</a></li>
+                            <li><a class="dropdown-item" href="/genre/Horror">Horror</a></li>
+                            <li><a class="dropdown-item" href="/genre/Sci-fi">Sci-fi</a></li>
+                            <li><a class="dropdown-item" href="/genre/Thriller">Thriller</a></li>
+                            <li><a class="dropdown-item" href="/genre/Western.">Western</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">TV-shows</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" id="searchInput">
+                <button class="btn btn-outline-success me-1" type="submit" id="searchButton">Search</button>
+            </div>
+        </div>
+        {% if current_user.is_authenticated %}
+        <form class="d-flex">
+            <h6>logged in as {{current_user.role}}</h6>
+            <a href="/Logout" class="btn btn-primary me-2" style="--bs-btn-padding-x: 1.5rem;">
+                Logout
+            </a>
+        </form>
+        {% else %}
+        <form class="btn-group col-2">
+            <a href="/Login" class="btn btn-primary col-1">Login</a>
+            <a href="/Sign_Up" class="btn btn-outline-secondary placeholder-color col-1 me-2">Sign Up</a>
+        </form>
+        {% endif %}
+    </nav>
+</div>

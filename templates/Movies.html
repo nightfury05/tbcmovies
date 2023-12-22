@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+{% for film in films[:1 ] %}
+<h1> {{ film.category.category }}</h1>
+{% endfor %}
+{% include "films.html" %}
+{% endblock %}

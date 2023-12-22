@@ -1,0 +1,5 @@
+Flask
+Flask-login
+Flask-WTF
+Flask-SQLAlchemy
+gunicorn

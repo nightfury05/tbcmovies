@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ genre }}</h1>
+{% if films == [] %}
+<br>
+<br>
+<br>
+<br>
+<h1>ამ ჟანრის ფილმები არ არის</h1>
+{% endif %}
+{% include "films.html" %}
+{% endblock %}
