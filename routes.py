@@ -1,4 +1,4 @@
-from flask import render_template, redirect, flash, url_for
+from flask import render_template, redirect, flash, url_for, get_flashed_messages
 from flask_login import login_user, logout_user, login_required, current_user
 from sqlalchemy.orm import joinedload
 from sqlalchemy import desc
@@ -96,18 +96,22 @@ def Watch(movie_id):
     user = User.username
     comments = Comment.query.filter(Comment.movie_id == movie_id).order_by(Comment.timestamp.desc()).all()
     form = CommentForm()
-    if form.validate_on_submit():
-        if chosen_watch:
-            new_comment = Comment(text=form.text.data, user=current_user)
-            chosen_watch.comments_relation.append(new_comment)
-            db.session.add(new_comment)
-            db.session.commit()
-            return redirect(url_for('Watch', movie_id=movie_id,))
+    messages = get_flashed_messages()
+    if form.validate_on_submit() and chosen_watch and current_user.is_authenticated:
+        new_comment = Comment(text=form.text.data, user=current_user)
+        chosen_watch.comments_relation.append(new_comment)
+        db.session.add(new_comment)
+        db.session.commit()
+        return redirect(url_for('Watch', movie_id=movie_id,) + '#focus_here')
+    elif not current_user.is_authenticated:
+        if form.validate_on_submit():
+            flash('Error: კომენტარის დამატებისთვის აუცილებელია გაიაროთ ავტორიზაცია', 'error')
+            return redirect("/Login")
 
     if not chosen_watch:
         return render_template("404.html")
     genres = [genre.name for genre in chosen_watch.genres]
-    return render_template("example.html", film=chosen_watch, genres=genres, form=form, user=user, comments=comments)
+    return render_template("example.html", film=chosen_watch, genres=genres, form=form, user=user, comments=comments, messages=messages)
 
 
 @app.route("/Add_Movie", methods=["GET", "POST"])

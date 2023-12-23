@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% block title %}{{film.title}}{% endblock %}
 {% block content %}
 <div class="mt-5">
     <div class="embed-responsive embed-responsive-16by9">
@@ -60,12 +61,30 @@
         <div>
             <form method="post" enctype="multipart/form-data" class="container mt-4 bgc ">
                 {{ form.hidden_tag() }}
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                <a id="focus_here"></a>
+                {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
                 <div class="">
                     {{ form.text(class="form-control placeholder-color ", placeholder=form.text.label.text, rows="2") }}
                 </div>
-                <div class="text-end me-1" >
-                {{ form.submit(class="btn btn-warning my-4") }}
-                    </div>
+                {% if current_user.is_authenticated %}
+                <div class="text-end me-1">
+                    {{ form.submit(class="btn btn-warning my-4") }}
+                </div>
+                {% else %}
+                <div class="text-end me-1">
+                    <button href="/Sign_Up" onclick="checkAuthentication()" class="btn btn-warning my-4 ">დამატება
+                    </button>
+                </div>
+
+                {% endif %}
             </form>
             <div class="mt-5 mb-3">
                 <b style="font-size: 24px;">კომენტარები</b>
